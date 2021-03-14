@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SalesWebMvc.Data;
+using SalesWebMvc.Services;
 
 namespace SalesWebMvc.Controllers
 {
     public class SellersController : Controller
     {
-        private readonly SalesWebMvcContext _context;
+        private readonly SellerService _sellerService;
 
-        public SellersController(SalesWebMvcContext context)
+        public SellersController(SellerService sellerService)
         {
-            _context = context;
+            _sellerService = sellerService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_sellerService.FindAll());
         }
     }
 }
