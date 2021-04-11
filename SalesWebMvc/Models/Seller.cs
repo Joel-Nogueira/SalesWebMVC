@@ -11,7 +11,6 @@ namespace SalesWebMvc.Models
         public String Email { get; set; }
         public DateTime BirthDate { get; set; }
         public Double BaseSalary { get; set; }
-
         public Department Department{ get; set; }
         public int DepartmentId { get; set; }
 
